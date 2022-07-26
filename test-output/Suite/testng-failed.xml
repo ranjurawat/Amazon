@@ -6,8 +6,6 @@
       <class name="amazon.Amazon.ThreatListScreenTest">
         <methods>
           <include name="openAppTest"/>
-          <include name="searchTest"/>
-          <include name="validLoginTest"/>
           <include name="startHome"/>
           <include name="openItemDetails"/>
         </methods>
