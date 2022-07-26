@@ -28,7 +28,7 @@ public class ThreatListPage {
 	@AndroidFindBy(id="versionx.threatleadtool:id/location_filter")
 	private WebElement locFilter;
 	
-	@AndroidFindBy(xpath="//android.widget.TextView[@text='Malleshwaram']")
+	@AndroidFindBy(xpath="//android.view.ViewGroup")
 	private WebElement locNm;
 	
 	@AndroidFindBy(className="android.widget.CheckedTextView")
