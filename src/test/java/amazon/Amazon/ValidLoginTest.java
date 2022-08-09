@@ -7,16 +7,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import Pages.ThreatListPage;
 import Pages.iRacsPage;
 import Pages.locationSelectionPage;
 import Pages.loginPage;
-import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.Activity;
-import io.appium.java_client.android.AndroidDriver;
 
 
 public class ValidLoginTest extends BaseTest {
@@ -34,18 +30,42 @@ public class ValidLoginTest extends BaseTest {
 	}
 	
 	@Test(priority=1)
-	public void validLoginTest() {	
+	public void validLoginTest(){	
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		loginPage loginScreen = new loginPage(driver);
 	     WebElement email = loginScreen.getEmailId();
 	     WebElement login = loginScreen.getLoginButton();
 	     locationSelectionPage selectLoc = new locationSelectionPage(driver);
-	     WebElement loc = selectLoc.getLocList();
+	     List<WebElement> loc = selectLoc.getLocList();
 	     WebElement okButton = selectLoc.clickOk();
-	     wait.until(ExpectedConditions.elementToBeClickable(email)).sendKeys("ranju@versionx.in");
-	     wait.until(ExpectedConditions.elementToBeClickable(login)).click();
-	     wait.until(ExpectedConditions.elementToBeClickable(loc)).click();
-	     wait.until(ExpectedConditions.elementToBeClickable(okButton)).click();
+	     
+	    if(email.isDisplayed()) {
+	    	wait.until(ExpectedConditions.elementToBeClickable(email)).sendKeys("ranju@versionx.in");
+		    wait.until(ExpectedConditions.elementToBeClickable(login)).click();
+	    
+	     
+	     long startTime = System.currentTimeMillis(); //fetch starting time
+	     boolean neededStatus;
+	     do{
+	    	 String xmlFormat = driver.getPageSource();
+	     neededStatus = xmlFormat.contains("Enter valid user Id");
+	     }while(!(neededStatus) && (((System.currentTimeMillis()-startTime) <= (5*1000))));
+	     
+	     System.out.println("Toast message"+", "+neededStatus);
+	     if (!neededStatus) {
+	     if(loc.size()!=0) {
+	    	System.out.println("Locations List"+", "+loc.size());
+	       wait.until(ExpectedConditions.elementToBeClickable(loc.get(1))).click();
+	       wait.until(ExpectedConditions.elementToBeClickable(okButton)).click();
+	     }else {
+	    	 System.out.println("No locations"+", "+loc.size());
+	     }
+	     }else {
+	    	 System.out.println("Login Failed");
+	     }
+	   }else {
+		   System.out.println("User is already logged in");
+	   }
 	}
 	
 //	@Test(priority=2)

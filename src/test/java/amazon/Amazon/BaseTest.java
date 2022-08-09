@@ -1,20 +1,7 @@
 package amazon.Amazon;
 
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
-
-import Pages.iRacsPage;
-
 import java.io.IOException;
-import java.time.Duration;
-import java.util.concurrent.TimeUnit;
-
 import io.appium.java_client.android.AndroidDriver;
 
 

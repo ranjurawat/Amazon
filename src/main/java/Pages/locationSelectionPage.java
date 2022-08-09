@@ -1,5 +1,7 @@
 package Pages;
 
+import java.util.List;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
@@ -13,13 +15,13 @@ public class locationSelectionPage {
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
 	}
 	
-	@AndroidFindBy(xpath="//android.widget.CheckedTextView[@index='2']")
-	 private WebElement location;
+	@AndroidFindBy(xpath="//android.widget.CheckedTextView")
+	 private List<WebElement> location;
 	
 	@AndroidFindBy(xpath="//android.widget.Button[@text='Ok']")
 	private WebElement ok;
 	
-	public WebElement getLocList() {
+	public List<WebElement> getLocList() {
 		return location;
 		
 	}
