@@ -1,61 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
+<testng-results ignored="0" total="7" passed="7" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-08-09T19:27:54 IST" name="Suite" finished-at="2022-08-09T19:28:44 IST" duration-ms="50432">
+  <suite started-at="2022-09-06T11:39:51 IST" name="Suite" finished-at="2022-09-06T11:40:41 IST" duration-ms="50348">
     <groups>
     </groups>
-    <test started-at="2022-08-09T19:27:54 IST" name="Test1" finished-at="2022-08-09T19:28:44 IST" duration-ms="50432">
+    <test started-at="2022-09-06T11:39:51 IST" name="Test1" finished-at="2022-09-06T11:40:41 IST" duration-ms="50348">
       <class name="amazon.Amazon.ThreatListScreenTest">
-        <test-method is-config="true" signature="openAppTest()[pri:0, instance:amazon.Amazon.ThreatListScreenTest@19e4653c]" started-at="2022-08-09T19:27:36 IST" name="openAppTest" finished-at="2022-08-09T19:27:54 IST" duration-ms="17753" status="PASS">
+        <test-method is-config="true" signature="openAppTest()[pri:0, instance:amazon.Amazon.ThreatListScreenTest@350aac89]" started-at="2022-09-06T11:39:31 IST" name="openAppTest" finished-at="2022-09-06T11:39:51 IST" duration-ms="19539" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openAppTest -->
-        <test-method is-config="true" signature="startHome()[pri:0, instance:amazon.Amazon.ThreatListScreenTest@19e4653c]" started-at="2022-08-09T19:27:54 IST" name="startHome" finished-at="2022-08-09T19:27:56 IST" duration-ms="2843" status="PASS">
+        <test-method is-config="true" signature="startHome()[pri:0, instance:amazon.Amazon.ThreatListScreenTest@350aac89]" started-at="2022-09-06T11:39:51 IST" name="startHome" finished-at="2022-09-06T11:39:54 IST" duration-ms="2933" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startHome -->
-        <test-method signature="validLoginTest()[pri:1, instance:amazon.Amazon.ThreatListScreenTest@19e4653c]" started-at="2022-08-09T19:27:56 IST" name="validLoginTest" finished-at="2022-08-09T19:28:06 IST" duration-ms="9050" status="PASS">
+        <test-method signature="validLoginTest()[pri:1, instance:amazon.Amazon.ThreatListScreenTest@350aac89]" started-at="2022-09-06T11:39:54 IST" name="validLoginTest" finished-at="2022-09-06T11:40:02 IST" duration-ms="8612" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validLoginTest -->
-        <test-method is-config="true" signature="startHome()[pri:0, instance:amazon.Amazon.ThreatListScreenTest@19e4653c]" started-at="2022-08-09T19:28:06 IST" name="startHome" finished-at="2022-08-09T19:28:08 IST" duration-ms="2622" status="PASS">
+        <test-method is-config="true" signature="startHome()[pri:0, instance:amazon.Amazon.ThreatListScreenTest@350aac89]" started-at="2022-09-06T11:40:02 IST" name="startHome" finished-at="2022-09-06T11:40:05 IST" duration-ms="2924" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startHome -->
-        <test-method signature="openItemDetails()[pri:3, instance:amazon.Amazon.ThreatListScreenTest@19e4653c]" started-at="2022-08-09T19:28:08 IST" name="openItemDetails" finished-at="2022-08-09T19:28:14 IST" duration-ms="6268" status="PASS">
+        <test-method signature="openItemDetails()[pri:3, instance:amazon.Amazon.ThreatListScreenTest@350aac89]" started-at="2022-09-06T11:40:05 IST" name="openItemDetails" finished-at="2022-09-06T11:40:11 IST" duration-ms="5714" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openItemDetails -->
-        <test-method is-config="true" signature="startHome()[pri:0, instance:amazon.Amazon.ThreatListScreenTest@19e4653c]" started-at="2022-08-09T19:28:14 IST" name="startHome" finished-at="2022-08-09T19:28:17 IST" duration-ms="2585" status="PASS">
+        <test-method is-config="true" signature="startHome()[pri:0, instance:amazon.Amazon.ThreatListScreenTest@350aac89]" started-at="2022-09-06T11:40:11 IST" name="startHome" finished-at="2022-09-06T11:40:14 IST" duration-ms="2823" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startHome -->
-        <test-method signature="searchTest()[pri:4, instance:amazon.Amazon.ThreatListScreenTest@19e4653c]" started-at="2022-08-09T19:28:17 IST" name="searchTest" finished-at="2022-08-09T19:28:21 IST" duration-ms="3581" status="PASS">
+        <test-method signature="searchTest(java.lang.String)[pri:4, instance:amazon.Amazon.ThreatListScreenTest@350aac89]" started-at="2022-09-06T11:40:14 IST" name="searchTest" data-provider="getData" finished-at="2022-09-06T11:40:16 IST" duration-ms="2396" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[ter]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- searchTest -->
-        <test-method is-config="true" signature="startHome()[pri:0, instance:amazon.Amazon.ThreatListScreenTest@19e4653c]" started-at="2022-08-09T19:28:21 IST" name="startHome" finished-at="2022-08-09T19:28:23 IST" duration-ms="2549" status="PASS">
+        <test-method is-config="true" signature="startHome()[pri:0, instance:amazon.Amazon.ThreatListScreenTest@350aac89]" started-at="2022-09-06T11:40:16 IST" name="startHome" finished-at="2022-09-06T11:40:19 IST" duration-ms="2799" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startHome -->
-        <test-method signature="locFilter()[pri:5, instance:amazon.Amazon.ThreatListScreenTest@19e4653c]" started-at="2022-08-09T19:28:23 IST" name="locFilter" finished-at="2022-08-09T19:28:29 IST" duration-ms="6172" status="PASS">
+        <test-method signature="searchTest(java.lang.String)[pri:4, instance:amazon.Amazon.ThreatListScreenTest@350aac89]" started-at="2022-09-06T11:40:19 IST" name="searchTest" data-provider="getData" finished-at="2022-09-06T11:40:22 IST" duration-ms="2920" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[pro]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchTest -->
+        <test-method is-config="true" signature="startHome()[pri:0, instance:amazon.Amazon.ThreatListScreenTest@350aac89]" started-at="2022-09-06T11:40:22 IST" name="startHome" finished-at="2022-09-06T11:40:25 IST" duration-ms="2819" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startHome -->
+        <test-method signature="locFilter()[pri:5, instance:amazon.Amazon.ThreatListScreenTest@350aac89]" started-at="2022-09-06T11:40:25 IST" name="locFilter" finished-at="2022-09-06T11:40:30 IST" duration-ms="5210" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- locFilter -->
-        <test-method is-config="true" signature="startHome()[pri:0, instance:amazon.Amazon.ThreatListScreenTest@19e4653c]" started-at="2022-08-09T19:28:29 IST" name="startHome" finished-at="2022-08-09T19:28:32 IST" duration-ms="2544" status="PASS">
+        <test-method is-config="true" signature="startHome()[pri:0, instance:amazon.Amazon.ThreatListScreenTest@350aac89]" started-at="2022-09-06T11:40:30 IST" name="startHome" finished-at="2022-09-06T11:40:33 IST" duration-ms="2814" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startHome -->
-        <test-method signature="getNotify()[pri:6, instance:amazon.Amazon.ThreatListScreenTest@19e4653c]" started-at="2022-08-09T19:28:32 IST" name="getNotify" finished-at="2022-08-09T19:28:36 IST" duration-ms="4316" status="PASS">
+        <test-method signature="getNotify()[pri:6, instance:amazon.Amazon.ThreatListScreenTest@350aac89]" started-at="2022-09-06T11:40:33 IST" name="getNotify" finished-at="2022-09-06T11:40:35 IST" duration-ms="2159" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getNotify -->
-        <test-method is-config="true" signature="startHome()[pri:0, instance:amazon.Amazon.ThreatListScreenTest@19e4653c]" started-at="2022-08-09T19:28:36 IST" name="startHome" finished-at="2022-08-09T19:28:39 IST" duration-ms="2634" status="PASS">
+        <test-method is-config="true" signature="startHome()[pri:0, instance:amazon.Amazon.ThreatListScreenTest@350aac89]" started-at="2022-09-06T11:40:35 IST" name="startHome" finished-at="2022-09-06T11:40:37 IST" duration-ms="1968" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startHome -->
-        <test-method signature="getUser()[pri:7, instance:amazon.Amazon.ThreatListScreenTest@19e4653c]" started-at="2022-08-09T19:28:39 IST" name="getUser" finished-at="2022-08-09T19:28:44 IST" duration-ms="5175" status="PASS">
+        <test-method signature="getUser()[pri:7, instance:amazon.Amazon.ThreatListScreenTest@350aac89]" started-at="2022-09-06T11:40:37 IST" name="getUser" finished-at="2022-09-06T11:40:41 IST" duration-ms="4154" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getUser -->

@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import Pages.iRacsPage;
@@ -77,4 +78,7 @@ public class ValidLoginTest extends BaseTest {
 //		wait.until(ExpectedConditions.elementToBeClickable(list.get(1))).click();
 //		
 //	}
+	
+	
+	
 }

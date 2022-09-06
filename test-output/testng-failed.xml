@@ -6,8 +6,8 @@
       <class name="amazon.Amazon.ThreatListScreenTest">
         <methods>
           <include name="openAppTest"/>
+          <include name="validLoginTest" invocation-numbers="1"/>
           <include name="startHome"/>
-          <include name="openItemDetails"/>
         </methods>
       </class> <!-- amazon.Amazon.ThreatListScreenTest -->
     </classes>

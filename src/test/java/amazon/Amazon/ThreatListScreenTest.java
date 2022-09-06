@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import Pages.ThreatListPage;
@@ -54,13 +55,13 @@ public class ThreatListScreenTest extends ValidLoginTest {
 		
 	}
 	
-	@Test(priority=4)
-	public void searchTest() {
+	@Test(priority=4,dataProvider= "getData")
+	public void searchTest(String value) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		
 		ThreatListPage searchTst = new ThreatListPage(driver);
 		 WebElement src = searchTst.getSearch();
-		 wait.until(ExpectedConditions.visibilityOf(src)).sendKeys("ter");
+		 wait.until(ExpectedConditions.visibilityOf(src)).sendKeys(value);
 		 WebElement view = searchTst.getListView();
 		 String val = view.getText();
 		 System.out.println("View Text"+", "+val.isEmpty());
@@ -129,6 +130,11 @@ public class ThreatListScreenTest extends ValidLoginTest {
 		wait.until(ExpectedConditions.visibilityOf(logButton)).isDisplayed();
 		System.out.println("Get Logout screen"+", "+logButton.isDisplayed());
 		}
+	}
+	
+	@DataProvider
+	public Object[][] getData() {
+		return new Object [][] {{"ter"},{"pro"}};
 	}
 	
 	
