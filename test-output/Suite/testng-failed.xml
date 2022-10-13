@@ -3,13 +3,12 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test1(failed)">
     <classes>
-      <class name="amazon.Amazon.ThreatListScreenTest">
+      <class name="amazon.Amazon.IntelTestClass">
         <methods>
-          <include name="openAppTest"/>
-          <include name="validLoginTest" invocation-numbers="1"/>
-          <include name="startHome"/>
+          <include name="fillIntelForm"/>
+          <include name="shareIntelButtonTest"/>
         </methods>
-      </class> <!-- amazon.Amazon.ThreatListScreenTest -->
+      </class> <!-- amazon.Amazon.IntelTestClass -->
     </classes>
   </test> <!-- Test1(failed) -->
 </suite> <!-- Failed suite [Suite] -->

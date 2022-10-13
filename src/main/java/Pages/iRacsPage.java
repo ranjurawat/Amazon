@@ -8,21 +8,18 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
 public class iRacsPage {
-	
-	public iRacsPage(AppiumDriver driver){
-		
+
+	public iRacsPage(AppiumDriver driver) {
+
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
-		
+
 	}
-	
-	@AndroidFindBy(xpath="//android.widget.Button[@text='Start']")
+
+	@AndroidFindBy(xpath = "//android.widget.Button[@text='Start']")
 	private WebElement startButton;
-	
+
 	public WebElement getStartButton() {
 		return startButton;
 	}
-	
-	
-	
-    
+
 }
