@@ -19,7 +19,23 @@
   </properties>
 
   <dependencies>
-  
+      
+      
+      <!-- https://mvnrepository.com/artifact/com.paulhammant/ngwebdriver -->
+<dependency>
+    <groupId>com.paulhammant</groupId>
+    <artifactId>ngwebdriver</artifactId>
+    <version>1.2</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+<dependency>
+    <groupId>com.aventstack</groupId>
+    <artifactId>extentreports</artifactId>
+    <version>5.0.9</version>
+</dependency>
+
+      
     
      <!-- https://mvnrepository.com/artifact/org.testng/testng -->
   <dependency>
@@ -64,8 +80,62 @@
     <version>2.13.4</version>
 </dependency>
 
+<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+<dependency>
+    <groupId>com.aventstack</groupId>
+    <artifactId>extentreports</artifactId>
+    <version>5.0.9</version>
+</dependency>
   
   </dependencies>
+  
+  <profiles>
+  <profile>
+  <id>Regression</id>
+  <build>
+    <pluginManagement>
+  <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.0.0-M8</version>
+        <configuration>
+        <skipTests>false</skipTests>
+            <testFailureIgnore>true</testFailureIgnore>
+          <suiteXmlFiles>
+            <suiteXmlFile>testng.xml</suiteXmlFile>
+          </suiteXmlFiles>
+        </configuration>
+      </plugin>
+</plugins>
+</pluginManagement>
+</build>
+  </profile>
+  
+  <profile>
+  <id>Smoke</id>
+  <build>
+    <pluginManagement>
+  <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.0.0-M8</version>
+        <configuration>
+        <skipTests>false</skipTests>
+            <testFailureIgnore>true</testFailureIgnore>
+          <suiteXmlFiles>
+            <suiteXmlFile>testng_smoke.xml</suiteXmlFile>
+          </suiteXmlFiles>
+        </configuration>
+      </plugin>
+</plugins>
+</pluginManagement>
+</build>
+  </profile>
+  </profiles>
+  
+  
 
   <build>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
@@ -92,6 +162,7 @@
         <configuration>
           <suiteXmlFiles>
             <suiteXmlFile>testng.xml</suiteXmlFile>
+            <suiteXmlFile>testng_smoke.xml</suiteXmlFile>
           </suiteXmlFiles>
         </configuration>
       </plugin>
@@ -117,6 +188,9 @@
           <artifactId>maven-project-info-reports-plugin</artifactId>
           <version>3.0.0</version>
         </plugin>
+        
+        
+        
       </plugins>
     </pluginManagement>
   </build>

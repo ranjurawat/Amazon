@@ -1,14 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Test1(failed)">
+  <listeners>
+    <listener class-name="testUtiles.Listeners"/>
+  </listeners>
+  <test thread-count="5" name="Threat Raise Test(failed)">
+    <parameter name="act" value="versionx.threatleadtool.Activity.StartActivity"/>
+    <parameter name="tool" value="versionx.threatleadtool"/>
+    <groups>
+      <run>
+        <include name="Sanity"/>
+      </run>
+    </groups>
     <classes>
-      <class name="amazon.Amazon.IntelTestClass">
+      <class name="amazon.Amazon.ThreatRaiseTestClass">
         <methods>
-          <include name="fillIntelForm"/>
-          <include name="shareIntelButtonTest"/>
+          <include name="openAppTest"/>
+          <include name="ScrollThreatRaise"/>
+          <include name="startHome"/>
         </methods>
-      </class> <!-- amazon.Amazon.IntelTestClass -->
+      </class> <!-- amazon.Amazon.ThreatRaiseTestClass -->
     </classes>
-  </test> <!-- Test1(failed) -->
+  </test> <!-- Threat Raise Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

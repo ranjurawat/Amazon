@@ -22,10 +22,10 @@ public class threatRaisePage {
 //	 private List<WebElement> threats;
 
 	// @AndroidFindBy(xpath="//android.widget.TextView[@text='Protest']")
-	@AndroidFindBy(xpath = "(//android.widget.TextView)[2]")
-	private WebElement threat;
+	@AndroidFindBy(id = "versionx.threatleadtool:id/liBg")
+	private List<WebElement> threat;
 
-	@AndroidFindBy(id = "versionx.threatleadtool:id/button3")
+	@AndroidFindBy(id = "versionx.threatleadtool:id/button2")
 	private WebElement status;
 
 	@AndroidFindBy(id = "versionx.threatleadtool:id/mock_drill")
@@ -36,18 +36,32 @@ public class threatRaisePage {
 
 	@AndroidFindBy(id = "android:id/button1")
 	private WebElement yesBtn;
+	
+	@AndroidFindBy(id = "versionx.threatleadtool:id/img_list")
+	private WebElement menuIcon;
+	
+	@AndroidFindBy(id = "versionx.threatleadtool:id/btn_raise")
+	private WebElement raiseButton;
+	
+//	@AndroidFindBy(id="new UiScrollable(new UiSelector().resourceId(\"versionx.threatleadtool:id/liBg\")).scrollIntoView(text(\"Employee Death Emergency\"))")
+//	private WebElement scrollThreats;
 
+	@AndroidFindBy(id="versionx.threatleadtool:id/tvCategory[@text='Employee Death Emergency']")
+	private WebElement scrollThreats;
+	
 	public WebElement getRaiseScreen() {
 		System.out.println(raiseScreen.isDisplayed());
 		return raiseScreen;
-	}
+	}	
+	
+	
 
 //	public List<WebElement> getThreats() {
 //		System.out.println(threats);
 //		return threats;
 //	}
 
-	public WebElement getThreat() {
+	public List<WebElement> getThreat() {
 		return threat;
 	}
 
@@ -63,7 +77,20 @@ public class threatRaisePage {
 		return alert;
 	}
 
-	public WebElement getYseBtn() {
+	public WebElement getYesBtn() {
 		return yesBtn;
+	}
+	
+	public WebElement getMenu() {
+		return menuIcon;
+		
+	}
+	
+	public WebElement getRaiseButton() {
+		return raiseButton;
+	}
+	
+	public WebElement getScrollThreats() {
+		return scrollThreats;
 	}
 }

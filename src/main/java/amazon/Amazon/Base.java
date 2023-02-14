@@ -38,10 +38,10 @@ public class Base {
 		cap.setCapability("autoGrantPermissions", true);
 		cap.setCapability(MobileCapabilityType.APP, fs.getAbsolutePath());
 		// cap.setCapability(MobileCapabilityType.FULL_RESET, true);
-		// cap.setCapability(MobileCapabilityType.NO_RESET, false);
+		 cap.setCapability(MobileCapabilityType.NO_RESET, true);
 
 		driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), cap);
-		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 		System.out.println("Base Class" + ',' + cap);
 
 		return driver;

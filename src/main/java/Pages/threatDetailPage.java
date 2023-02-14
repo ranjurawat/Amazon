@@ -19,5 +19,7 @@ public class threatDetailPage {
 	public WebElement getDetail() {
 		return details;
 	}
+	
+	
 
 }

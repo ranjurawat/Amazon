@@ -1,13 +1,15 @@
 package amazon.Amazon;
 
 import org.testng.annotations.BeforeSuite;
+
 import java.io.IOException;
+
 import io.appium.java_client.android.AndroidDriver;
 
 
 public class BaseTest extends Base {
 
-	@BeforeSuite
+	@BeforeSuite(alwaysRun=true)
 	public void openAppTest() throws IOException, InterruptedException { 
 		
 		System.out.println("Run Driver");

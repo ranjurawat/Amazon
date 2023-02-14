@@ -2,27 +2,50 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
 
-  <test name="Test1">
-  
-    <classes> 
-         <class name="amazon.Amazon.LoginTestClass"/>
-         <class name="amazon.Amazon.ThreatRaiseTestClass"/>
-         <class name="amazon.Amazon.IntelTestClass"/>
-    </classes>
-  
-   </test>
-   
-   <!-- <test name="Test2">
-     
-     <classes> 
-         <class name="amazon.Amazon.ThreatListScreenTestClass"/>
-     </classes>
-     
-   </test> -->
-   
-</suite> 
-<!-- <groups>
-    <run>
-        <include name ="prerequisites"/>
-    </run>
-</groups> -->
+<groups>
+<run>
+<!-- <include name="Smoke"/> -->
+<exclude name ="Sanity"/>
+</run>
+</groups>
+
+<listeners>
+<listener class-name="testUtiles.Listeners"/>
+ </listeners>
+
+	<test name="Login Test">
+		<parameter name="tool" value="versionx.threatleadtool" />
+		<parameter name="act"
+			value="versionx.threatleadtool.Activity.StartActivity" />
+		<classes>
+			<class name="amazon.Amazon.LoginTestClass"/>
+		</classes>
+	</test>
+
+	 <test name="Threat Raise Test">
+		<parameter name="tool" value="versionx.threatleadtool" />
+		<parameter name="act"
+			value="versionx.threatleadtool.Activity.StartActivity" />
+		<classes>
+ 			<class name="amazon.Amazon.ThreatRaiseTestClass" />
+  			<class name="amazon.Amazon.ThreatListScreenTestClass" />
+ 		</classes>
+	</test>
+	
+	<!-- <test name="Acknowledger Tests"> <parameter name="tool" value="versionx.threatleadtool" 
+		/> <parameter name="act" value= "versionx.threatleadtool.Activity.StartActivity" 
+		/> <classes> <class name="amazon.Amazon.LoginTestClass" /> <class name="amazon.Amazon.ThreatRaiseTestClass" 
+		/> <class name="amazon.Amazon.IntelTestClass" /> <class name="amazon.Amazon.SOSTestClass" 
+		/> <class name="amazon.Amazon.ThreatListScreenTestClass" /> </classes> </test> -->
+
+
+	<!-- <test name="Initiator Tests"> <class name="amazon.Amazon.LoginTestClass" 
+		/> <class name="amazon.Amazon.ThreatRaiseTestClass" /> <class name="amazon.Amazon.ThreatListScreenTestClass" 
+		/> </test> -->
+
+	<!-- <test name="Test2"> <classes> <class name="amazon.Amazon.ThreatListScreenTestClass"/> 
+		</classes> </test> -->
+
+</suite>
+
+<!-- <groups> <run> <include name ="prerequisites"/> </run> </groups> -->

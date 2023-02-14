@@ -4,8 +4,14 @@ import java.util.List;
 
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
 import Pages.iRacsPage;
 import Pages.locationSelectionPage;
@@ -15,12 +21,15 @@ import io.appium.java_client.android.Activity;
 public class LoginTestClass extends BaseTest {
 
 	@BeforeMethod
-	public void startHome() {
-		Activity activity = new Activity("versionx.threatleadtool", "versionx.threatleadtool.Activity.StartActivity");
+	@Parameters({"tool", "act"})
+	public void startHome(String tool, String act) {
+		
+		Activity activity = new Activity(tool, act);
 		driver.startActivity(activity);
 		iRacsPage iracs = new iRacsPage(driver);
 		WebElement start = iracs.getStartButton();
 		start.click();
+		
 	}
 
 	@Test(dataProvider = "getEmails")
@@ -31,26 +40,14 @@ public class LoginTestClass extends BaseTest {
 		locationSelectionPage selectLoc = new locationSelectionPage(driver);
 		List<WebElement> loc = selectLoc.getLocList();
 		WebElement okButton = selectLoc.clickOk();
-
 		if (email.isDisplayed()) {
 			email.sendKeys(Email);
 			login.click();
-			long startTime = System.currentTimeMillis(); // fetch starting time
-			boolean neededStatus;
-
-			do {
-
-				String xmlFormat = driver.getPageSource();
-				neededStatus = xmlFormat.contains("Enter valid user Id");
-
-			} while (!(neededStatus) && (((System.currentTimeMillis() - startTime) <= (5 * 1000))));
-
-			System.out.println("Toast message" + ", " + neededStatus);
-			
-			if (!neededStatus) {
+			boolean toastisTrue = getToastMessage("Enter valid user Id");
+			if (!toastisTrue) {
 				if (loc.size() != 0) {
 					System.out.println("Locations List" + ", " + loc.size());
-					loc.get(1).click();
+					loc.get(2).click();
 					okButton.click();
 				} else {
 					System.out.println("No locations" + ", " + loc.size());
@@ -65,7 +62,20 @@ public class LoginTestClass extends BaseTest {
 
 	@DataProvider
 	public Object[][] getEmails() {
-		return new Object[][] { { "ranjuversionx.in" }, { "purvi@versionx" }, { "purvi@gmail.com" } };
+		return new Object[][] {{ "jyoti@gmail.com" } };
+		
+		//return new Object[][] { { "monikagmail.in" }, { "monika@gmail" }, { "monika@gmail.com" } };
+	}
+
+	public boolean getToastMessage(String message) {
+		long startTime = System.currentTimeMillis(); // fetch starting time
+		boolean neededStatus;
+		do {
+			String xmlFormat = driver.getPageSource();
+			neededStatus = xmlFormat.contains(message);
+
+		} while (!(neededStatus) && (((System.currentTimeMillis() - startTime) <= (5 * 1000))));
+		return neededStatus;
 	}
 
 //	@Test(priority=2)
